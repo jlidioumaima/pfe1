@@ -5,9 +5,10 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\HttpFoundation\Request;
 use App\Repository\CroisiereRepository;
 use App\Repository\PaysRepository;
+use Symfony\Component\HttpFoundation\Request;
+
 use App\Entity\Client;
 use App\Form\ClientType;
 use App\Repository\ClientRepository;
@@ -28,8 +29,7 @@ class CroisiereFrontController extends AbstractController
 
         ]);
     }
-      
-   
+    
      /**
      * @Route("/detailsCroisiere/{id}", name="app_detail_croisiere", methods={"GET"})
      */
@@ -61,9 +61,9 @@ class CroisiereFrontController extends AbstractController
     }
 
      /**
-     * @Route("/reserver/croisiere/{id}", name="app_reserver_croisiere", methods={"GET", "POST"})
+     * @Route("/reserver/croisiere/{id}", name="app_reserver_croisiere" , methods={"GET", "POST"})
      */
-    public function Reserver(CroisiereRepository $croisiereRepository ,string $id,Request $request, ClientRepository $clientRepository): Response
+    public function Reserver(CroisiereRepository $croisiereRepository ,string $id, Request $request, ClientRepository $clientRepository): Response
     {
         $croisiere = $croisiereRepository->findById($id);
         $client = new Client();
@@ -72,15 +72,12 @@ class CroisiereFrontController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $clientRepository->add($client);
-            return $this->redirectToRoute('app_client_index', [], Response::HTTP_SEE_OTHER);
-
         }
-
+        return $this->renderForm('Client/croisiere/reserver.html.twig',[
       
-        return $this->render('Client/croisiere/reserver.html.twig', [
-            'controller_name' => 'HomeController',
             'croisiere' => $croisiere,
-            'form' => $form->createView()
+            'client' => $client,
+            'form' => $form,
 
         ]);
     }
