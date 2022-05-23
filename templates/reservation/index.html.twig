@@ -1,0 +1,82 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block script %}
+	<script src="{{ asset('admin/global_assets/js/plugins/tables/datatables/datatables.min.js') }}"> </script>
+	<script src="{{ asset('admin/global_assets/js/demo_pages/datatables_basic.js') }}"> </script>   
+{% endblock %}
+
+{% block content %}
+   <div class="content">
+  
+              
+           
+   <div class="card-header header-elements-inline" style="background-color: #007682b5;" style="padding-bottom:100px">
+  
+						<h3 class="card-title" style="color:white">Liste des Reservations</h3>
+                        <div class="header-elements"  >
+	                	</div>
+
+                           </div><br>
+                           
+                           <div class="card">
+						
+							<div class="card-body">
+    <table class="table datatable-basic dataTable no-footer" id="DataTables_Table_0"  ="grid" aria-describedby="DataTables_Table_0_info">
+        <thead>
+           <tr>
+              
+                <th>Offre </th>
+                <th>Grille Tarifaire </th>
+          
+                <th>Client </th>
+                     
+                <th>Date</th>
+                <th>Statut</th>
+                 {% if is_granted('ROLE_AGENT')%}  
+                <th colspan="4">Action</th>
+                 {% elseif is_granted('ROLE_RESPONSABLE')%}
+                     <th colspan="4">Action</th>
+                     {% endif %} 
+            </tr>
+        </thead>
+        <tbody>
+        {% for reservation in reservations %}
+            <tr>
+               
+                 
+                   <td>{{ reservation.offre.titre}}</td>
+
+             
+                   
+              
+                   <td>{{ reservation.grilletarifaire.description}}</td>
+                
+                  
+                   <td>{{  reservation.client.nom}}</td>
+                
+                <td>{{reservation.dateCreation|date('Y/m/d')}}</td>
+       <td>         {% if  reservation.status =='non_traitee' %} <span class="badge badge-danger">{{ reservation.status  }}</span></center> {% elseif reservation.status =='en_cours' %}  <span class="badge badge-secondary">{{ reservation.status  }}</span></center> {% else %} <span class="badge badge-success">{{ reservation.status  }}</span></center>{% endif %}</td>
+               <td colspan="4">
+                     {% if is_granted('ROLE_AGENT')%}  
+                  <a class="btn edit btn-warning"  href="{{ path('app_reservation_edit', {'id': reservation.id}) }}"style="width:40px"><i class="icon-pencil"></i></a>
+                                    {{ include('reservation/_delete_form.html.twig') }}
+
+                     {% elseif is_granted('ROLE_RESPONSABLE')%}
+                            <a class="btn edit btn-warning"  href="{{ path('app_reservation_edit', {'id': reservation.id}) }}"style="width:40px"><i class="icon-pencil"></i></a>
+                                   {{ include('reservation/_delete_form.html.twig') }}
+
+                     {% endif %}
+
+           </td> </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+         
+    </table>
+  
+{% endblock %}

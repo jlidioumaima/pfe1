@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block titlepage %}GrilleTarifaire{% endblock %}
+
+{% block content %}
+<div class="content">
+  
+              
+           
+   <div class="card-header header-elements-inline" style="background-color: #007682b5;" style="padding-bottom:100px">
+  
+						<h3 class="card-title" style="color:white">Details de GrilleTarifaire :{{grille_tarifaire.id}}</h3>
+                        <div class="header-elements"  >
+							 <a class="btn btn-dark" style="width:180px" href="{{ path('app_tarifaire_index') }}"><i class="icon-user-plus"></i> Liste des GrilleTarifaires</a>
+	                	</div>
+
+                           </div><br>
+                           
+                           <div class="card">
+						
+							<div class="card-body">
+    <table class="table datatable-basic dataTable no-footer" id="DataTables_Table_0"  ="grid" aria-describedby="DataTables_Table_0_info">
+  
+        <tbody>
+            
+           
+            <tr>
+                <th>Id</th>
+                <td>{{ grille_tarifaire.id }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ grille_tarifaire.description }}</td>
+            </tr>
+            <tr>
+                <th>Date Debut</th>
+                <td>{{ grille_tarifaire.dateDebut ? grille_tarifaire.dateDebut|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Date Fin</th>
+                <td>{{ grille_tarifaire.dateFin ? grille_tarifaire.dateFin|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Type Chambre</th>
+                <td>{{ grille_tarifaire.typeChambre }}</td>
+             </tr>
+             <tr>
+                <th>Hotel</th>
+                <td>{{ grille_tarifaire.hotel }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+   </div>
+      
+    </div>
+  </div>
+</div>
+{% endblock %}

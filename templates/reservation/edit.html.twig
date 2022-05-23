@@ -1,0 +1,25 @@
+
+
+{% extends 'base.html.twig' %}
+
+{% block titlepage %}Modifier Reservation{% endblock %}
+
+{% block content %}
+
+<div class="content">
+
+   <div class="card-header header-elements-inline" style="background-color: #007682b5;">
+						<h3 class="card-title" style="color:white">Modifier Reservation</h3>
+						<div class="header-elements">
+							 <a class="btn btn-dark" style="width:170px" href="{{ path('app_reservation_index') }}"> <i class="icon-reply"></i>Liste des Reservations</a>
+
+	                	</div>
+					</div>
+					<br />
+   	<div class="card">
+							
+							<div class="card-body">
+    {{ include('reservation/_form.html.twig', {'button_label': 'Modifier'}) }}
+  
+   
+{% endblock %}

@@ -1,0 +1,71 @@
+<a class="btn edit btn-info" type="button"  data-toggle="modal" data-target="#exampleModalCenter{{ hotel.id }}" href="{{ path('app_hotel_show', {'id': hotel.id}) }}"style="width:40px"><i class="icon-eye2"></i></a>
+
+
+
+
+<div class="modal fade right" id="exampleModalCenter{{ hotel.id }}"  role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+
+  <!-- Add class .modal-full-height and then add class .modal-right (or other classes from list above) to set a position to the modal -->
+  <div class="modal-dialog modal-dialog-centered" role="document">
+
+    <div class="modal-content">
+       
+      <div class="modal-body">
+                   <div class="modal-header">
+                    <h5 class="modal-title" id="myModalLabel"><i class="ti-marker-alt m-r-10" ></i> {{ hotel.nom }} </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                   </div>
+
+    <table class="table">
+        <tbody>
+            
+            <tr>
+                <th>Nom</th>
+                <td>{{ hotel.nom }}</td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td>{{ hotel.adresse }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ hotel.email }}</td>
+            </tr>
+            <tr>
+                <th>Telephone</th>
+                <td>{{ hotel.telephone }}</td>
+            </tr>
+            <tr>
+                <th>Etoile</th>
+                <td>{{ hotel.etoiles }}</td>
+            </tr>
+             <tr>
+                                   <th>Images</th>
+                                  
+                                   <td>
+                            {% if app.request.attributes.get('_route') == 'app_hotel_show' %}
+  
+      
+        
+   {% for image in hotel.images %}
+            <div>
+           
+                <img src="{{ asset('/uploads/'~image.name) }}" alt="" width="90" height="90">
+
+                {# On ajoute un lien permettant de supprimer une image (sera géré en Ajax) #}
+                
+            </div>
+        {% endfor %}
+        </td></tr>
+        {%endif%}
+        </tbody>
+    </table>
+
+   </div>
+      
+    </div>
+  </div>
+</div>

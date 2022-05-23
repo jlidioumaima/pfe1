@@ -1,0 +1,443 @@
+ {% extends 'layout.html.twig' %}
+{% block body %}
+ <div id="content_wrapper"> 
+    <!--page title Start-->
+    <div class="page_title" data-stellar-background-ratio="0" data-stellar-vertical-offset="0" style="background-image:url(https://via.placeholder.com/1599x640);">
+      <ul>
+        <li><a href="javascript:;">Tour package - booking</a></li>
+      </ul>
+    </div>
+    <!--page title end-->
+    <div class="clearfix"></div>
+    	{% for omra in omra %}
+    <div class="full_width destinaion_sorting_section">
+      <div class="container">
+        <div class="row space_100"> 
+          <!-- left sidebar start --> 
+          <!-- left sidebar end --> 
+          <!-- right main start -->
+          <div class="col-lg-12">
+            <div class="tour_package_booking_section"> 
+              <!-- package tabs start -->
+              <div id="tour_booking_tabs"> 
+                <!-- tabs start -->
+                <div class="tour_booking_tabs">
+                  <ul>
+                              <li><a href="#personal_info">Personal Info</a></li>
+                    <li><a href="#booking_details">Booking Details</a></li>
+        
+                    <li><a href="#payment_info">Payment Info</a></li>
+                    <li><a href="#confirmation">Confirmation</a></li>
+                  </ul>
+                </div>
+                <!-- tabs end --> 
+                <!-- booking_details Start -->
+                <div id="booking_details" class="main_content_area hotel_main_content">
+                  <div class="inner_container"> 
+                    <!--  tab inner section two Start -->
+                    <div class="tab_inner_section flight_inner_section">
+                      <div class="heading_tab_inner">
+                        <h5>flight Details</h5>
+                        <span>change flight</span> </div>
+                      <div class="tab_inner_body full_width">
+                        <div class="flight_review_area full_width">
+                          <div class="col-lg-10 col-md-9"> 
+                            <!--  review area start -->
+                            <div class="row">
+                              <div class="col-lg-4 col-md-4">  {% for image in omra.images|slice(0, 1)%} 
+			 
+													 <img src="{{ asset('/uploads/'~image.name) }}" alt="review image" width="237" height="165"> 
+
+													
+			 {% endfor %} </div>
+                              <div class="col-lg-8 col-md-8">
+                                <div class="review_content">
+                                  <div class="top_head_bar">
+                                    <h4>{{ omra.titre }}</h4>
+                                    <span class="country_span"> {% for omra in omra.pays %}
+            
+                 {{ omra.nom}}
+               
+            
+            {% endfor %}</span> </div>
+                                  <div class="review_star_cover">
+                                    <div class="bottom_star_rating"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </div>
+                                    <span>345 Reviews</span> </div>
+                                </div>
+                              </div>
+                              <!--  review area end --> 
+                            </div>
+                            <!-- row --> 
+                          </div>
+                          <!--  col-lg-9 -->
+                          
+                          <div class="right_includes_hotel col-lg-3 col-md-3">
+                          <div class="check_in_out_wrap">
+                            <div class="check_in">
+                              <label>Check in</label>
+                              <div class="check_in_box"> <span class="day">Mon</span> <span class="date">22</span> <span class="month">sep</span> </div>
+                            </div>
+                            <div class="check_in">
+                              <label>Check out</label>
+                              <div class="check_in_box"> <span class="day">Mon</span> <span class="date">22</span> <span class="month">sep</span> </div>
+                            </div>
+                          </div>
+                        </div>
+                       </div>
+                        <!-- tab include area Start -->
+                        
+                      
+                        <!-- tab include area End --> 
+                        <!-- tab include area Start -->
+                          <div class="inludes_hotel_booking">
+                       <div class="row">
+                        <div class="left_lists col-lg-6 col-md-6">
+                          <table>
+                            <tr>
+                              <td class="label_list">room type</td>
+                              <td>-</td>
+                              <td>Luxurious Two BedRoom</td>
+                            </tr>
+                            <tr>
+                              <td class="label_list">adults</td>
+                              <td>-</td>
+                              <td>2</td>
+                            </tr>
+                            <tr>
+                              <td class="label_list">children</td>
+                              <td>-</td>
+                              <td>1</td>
+                            </tr>
+                            <tr>
+                              <td class="label_list">duration</td>
+                              <td>-</td>
+                              <td>3 Nights/ 2 Days</td>
+                            </tr>
+                          </table>
+                        </div>
+                        <div class="left_lists col-lg-6 col-md-6">
+                          <div class="table_bold">
+                            <table>
+                              <tr>
+                                <td class="label_list">Per Room Price</td>
+                                <td>-</td>
+                                <td class="bold">$210</td>
+                              </tr>
+                              <tr>
+                                <td class="label_list">Extra Persons (1) </td>
+                                <td>-</td>
+                                <td class="bold">$105</td>
+                              </tr>
+                              <tr>
+                                <td class="label_list">3 Nights Stay</td>
+                                <td>-</td>
+                                <td class="bold">$945</td>
+                              </tr>
+                              <tr>
+                                <td class="label_list">Taxe Fee</td>
+                                <td>-</td>
+                                <td class="bold">$15</td>
+                              </tr>
+                            </table>
+                          </div>
+                        </div>
+                       </div>
+                        </div>
+                        <!-- tab include area End --> 
+                      </div>
+                      <!--  tab inner body  End--> 
+                      
+                    </div>
+                    <!-- tab inner section end --> 
+                    
+                  </div>
+                  <!--  inner_container --> 
+                  
+                  <!-- total row Start-->
+                  <div class="full_width total_price_row">
+                    <p>Total Price - </p>
+                    <h2>$960</h2>
+                  </div
+                  
+                  <!-- proceed button -->
+                  <div class="full_width t_align_c">
+                    <button type="submit" value="proceed to next step" class="btn_green proceed_buttton btns">proceed to next step</button>
+                  </div>
+                  <!-- proceed button --> 
+                </div>
+                <!-- booking_details End --> 
+                <!-- personal_info Start -->
+                <div id="personal_info" class="main_content_area hotel_main_content"> 
+                  <!--  tab inner section three Start -->
+                  <div class="inner_container">
+                    <form class="package_booking_main">
+                      <div class="tab_inner_section inner_section_2 flight_inner_section">
+                        <div class="tab_inner_body full_width"> 
+                          <!-- package_booking_form start -->
+                          <div class="package_booking_form">
+                            <div class="col-lg-6 col-md-6">
+                              <input type="text" placeholder="Nom" name="nom" class="booking_input">
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                              <input type="text" placeholder="Prenom" name="prenom" class="booking_input">
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                              <input type="email" placeholder="Email" name="email" class="booking_input">
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                              <input type="email" placeholder="Cofirm Email" name="Cofirm_Email" class="booking_input">
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                              <input type="text" placeholder="Adresse" name="adresse" class="booking_input">
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                              <input type="text" placeholder="Telephone" name="telephone" class="booking_input">
+                            </div>
+                            
+                          </div>
+                          <!--  package_booking_form END --> 
+                        </div>
+                        <!--  tab_inner_body end -->
+                        
+                        <div class="checkbox_book top_margin">
+                          <input id="check1" type="checkbox" name="check" value="check1">
+                          <label for="check1">I want receive Travelite promotional and offers in the future</label>
+                        </div>
+                      </div>
+                      <!--  tab inner three section End --> 
+                      <!-- proceed button -->
+                      <div class="full_width t_align_c">
+                        <button type="submit" value="proceed to next step" class="btn_green proceed_buttton btns">proceed to next step</button>
+                      </div>
+                      
+                      <!-- proceed button -->
+                    </form>
+                  </div>
+                  <!--  inner container end --> 
+                </div>
+                <!-- personal_info End --> 
+                <!-- payment_info Start -->
+                <div id="payment_info" class="main_content_area flight_inner_section"> 
+                  <!-- inner_container Start -->
+                  <div class="inner_container"> 
+                    <!--  tab inner three section Start -->
+                    <div class="tab_inner_section hotel_inner_section">
+                      <div class="heading_tab_inner">
+                        <h5>payment Details</h5>
+                      </div>
+                      <!--  tab_inner_body Start-->
+                      <div class="tab_inner_body full_width">
+                        <div class="payment_details_main"> 
+                          <!-- Review content main -->
+                          <div class=" col-lg-8 col-md-8 review_content">
+                            <div class="top_head_bar">
+                              <h4>{{ omra.titre }}</h4>
+                              <span class="country_span">Brisbane to Malaysia </span> <span class="country_span">One Way Flight</span> </div>
+                            <div class="review_star_cover">
+                              <div class="bottom_star_rating"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </div>
+                              <span>345 Reviews</span> </div>
+                          </div>
+                          <!-- Review content main -->
+                          <div class="col-lg-4 col-md-4">
+                            <div class="payment_table table_bold">
+                              <ul>
+                                <li> <span>Base fare</span><span class="bold">$320</span> </li>
+                                <li> <span>Tax &Fare</span><span class="bold">$300</span> </li>
+                                <li class="total_row"> <span>Total</span><span>$620</span> </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- payment_details_main end --> 
+                      </div>
+                      <!--  tab_inner_body end --> 
+                    </div>
+                    <!--  tab inner three section End --> 
+                    <!--  tab inner  section start -->
+                    
+                    <!--  tab inner three section End --> 
+                  </div>
+                  <!-- inner_container end --> 
+                </div>
+                <!-- content area end --> 
+                <!-- payment_info End --> 
+                
+                <!-- confirmation Start -->
+                 <div id="confirmation" class="main_content_area hotel_main_content">
+                  <div class="inner_container"> 
+                    <!-- confirmation message -->
+                    <div class="full_width confirmation_msg"> <span>Thank you. Your Booking is Confirmed Now</span> </div>
+                    <!-- confirmation message End--> 
+                    <!--  tab inner three section Start -->
+                    <div class="tab_inner_section hotel_inner_section">
+                      <div class="heading_tab_inner">
+                        <h5>payment Details</h5>
+                      </div>
+                      <!--  tab_inner_body Start-->
+                      <div class="tab_inner_body full_width">
+                        <div class="payment_details_main"> 
+                          <!-- Review content main -->
+                          <div class=" col-lg-9 col-md-9 review_content">
+                            <div class="top_head_bar">
+                              <h4>{{ omra.titre }} </h4>
+                              <span class="country_span">Brisbane, Australia</span> <span class="time_date"><i class="fa fa-clock-o"></i>3days</span> </div>
+                            <div class="review_star_cover">
+                              <div class="bottom_star_rating"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </div>
+                              <span>345 Reviews</span> </div>
+                          </div>
+                          <div class="col-lg-3 col-md-3">
+                            <div class="doller_left">
+                              <h2>$1000</h2>
+                              <p>Per Person</p>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- payment_details_main end --> 
+                        <!-- table section main start-->
+                        <div class="full_width package_table_section">
+                          <div class="col-lg-6 col-md-6 border_right">
+                            <div class="payment_table_package">
+                              <table class="table">
+                                <tr>
+                                  <td>Starting Date</td>
+                                  <td>:</td>
+                                  <td>20 sep 2015</td>
+                                </tr>
+                                <tr>
+                                  <td>Starting Date</td>
+                                  <td>:</td>
+                                  <td>27 Jan 2015</td>
+                                </tr>
+                                <tr>
+                                  <td>Day</td>
+                                  <td>:</td>
+                                  <td>3</td>
+                                </tr>
+                                <tr>
+                                  <td>Adults</td>
+                                  <td>:</td>
+                                  <td>2</td>
+                                </tr>
+                                <tr>
+                                  <td>Children</td>
+                                  <td>:</td>
+                                  <td>1</td>
+                                </tr>
+                              </table>
+                            </div>
+                            <!--  Payment Table End --> 
+                          </div>
+                          <div class="col-lg-6 col-md-6"> 
+                            <!--  Payment Table Start -->
+                            <div class="payment_table_package table_bold">
+                              <table>
+                                <tr>
+                                  <td>base price</td>
+                                  <td class="bold">$1000</td>
+                                </tr>
+                                <tr>
+                                  <td>extra persons(1)</td>
+                                  <td class="bold">$1000</td>
+                                </tr>
+                                <tr>
+                                  <td>Taxes</td>
+                                  <td class="bold">$120</td>
+                                </tr>
+                                <tr>
+                                  <td>discount</td>
+                                  <td class="bold">(-)$1000</td>
+                                </tr>
+                                <tr class="total_row">
+                                  <td>Total</td>
+                                  <td>$1900</td>
+                                </tr>
+                              </table>
+                              <!--  Payment Table End --> 
+                            </div>
+                          </div>
+                        </div>
+                        <!-- table section main end-->
+                        <div class="full_width total_price_row">
+                          <p>Total Price - </p>
+                          <h2>$1900</h2>
+                        </div>
+                      </div>
+                      <!--  tab_inner_body end --> 
+                    </div>
+                    <!--  tab inner three section End --> 
+                    <!-- information_section start -->
+                    <div class="full_width information_section">
+                      <div class="information_title"> Traveler Information </div>
+                      <div class="full_width information_table_main">
+                        <div class="col-lg-6 col-md-6 border_right">
+                          <div class="payment_table_package">
+                            <table class="table">
+                              <tr>
+                                <td>Booking Number :</td>
+                                <td>0090038968</td>
+                              </tr>
+                              <tr>
+                                <td>First Name :</td>
+                                <td>Steve</td>
+                              </tr>
+                              <tr>
+                                <td>Last Name :</td>
+                                <td>Joseph</td>
+                              </tr>
+                              <tr>
+                                <td>Email :</td>
+                                <td>stevejoseph@host.com</td>
+                              </tr>
+                            </table>
+                          </div>
+                          <!--  Payment Table End --> 
+                        </div>
+                        <div class="col-lg-6 col-md-6 border_right">
+                          <div class="payment_table_package">
+                            <table class="table">
+                              <tr>
+                                <td>Address :</td>
+                                <td>20 sep 2015</td>
+                              </tr>
+                              <tr>
+                                <td>Town/City :</td>
+                                <td>27 Jan 2015</td>
+                              </tr>
+                              <tr>
+                                <td>Zip Code : </td>
+                                <td>63800</td>
+                              </tr>
+                              <tr>
+                                <td>Country :</td>
+                                <td>Your Country Name Here</td>
+                              </tr>
+                            </table>
+                          </div>
+                          <!--  Payment Table End --> 
+                        </div>
+                      </div>
+                      <!-- information_table End --> 
+                    </div>
+                    <!-- information_section End --> 
+                    
+                    <!-- information_section start -->
+                  
+                    <!-- information_section End --> 
+                  </div>
+                  <!--  inner container --> 
+                </div>
+                <!-- confirmation End --> 
+              </div>
+              <!-- package tabs End --> 
+            </div>
+            <!-- right main start --> 
+          </div>
+          <!-- col-lg-9-end --> 
+        </div>
+        <!--  row main --> 
+      </div>
+      <!-- container --> 
+    </div>
+    <!-- main wrapper -->
+         {%endfor %}
+          {%endblock %}

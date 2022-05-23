@@ -1,0 +1,20 @@
+
+{% extends 'base.html.twig' %}
+
+{% block titlepage %}Nouveau Reservation{% endblock %}
+
+{% block content %}
+    <div class="card-header header-elements-inline" style="background-color: #007682b5;">
+						<h3 class="card-title" style="color:white">Ajouter nouveau Reservation</h3>
+      <a class="btn btn-dark" style="width:180px" href="{{ path('app_reservation_index') }}"> <i class="icon-reply"></i>Liste des Reservations</a>
+
+                           </div>
+                           <br />
+   	<div class="card">
+							
+							<div class="card-body">
+
+    {{ include('reservation/_form.html.twig') }}
+
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+
+{% block titlepage %}New Offre{% endblock %}
+
+{% block content %}
+   <div class="card-header header-elements-inline" style="background-color:Teal">
+						<h3 class="card-title" style="color:white">Ajout nouveau Offre</h3>
+      <a class="btn btn-dark" style="width:150px" href="{{ path('app_offres_index') }}"> <i class="icon-reply"></i>Liste des Offres</a>
+
+                           </div>
+                            <br />
+   	<div class="card">
+							
+							<div class="card-body">
+
+
+    {{ include('offre/_form.html.twig') }}
+
+
+   
+{% endblock %}

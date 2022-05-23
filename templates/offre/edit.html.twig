@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block titlepage %}Modifier Offre{% endblock %}
+
+{% block content %}
+
+<div class="content">
+
+   <div class="card-header header-elements-inline" style="background-color:Teal">
+						<h3 class="card-title" style="color:white">Modifier Offre</h3>
+						<div class="header-elements">
+							 <a class="btn btn-dark" style="width:150px" href="{{ path('app_offres_index') }}"> <i class="icon-reply"></i>Liste des Offres</a>
+
+	                	</div>
+					</div>
+					<br />
+   	<div class="card">
+							
+							<div class="card-body">
+    {{ include('offre/_form.html.twig', {'button_label': 'Modifier'}) }}
+  
+   
+{% endblock %}
+{% block javascripts %}
+    <script src="{{ asset('js/images.js') }}"></script>
+{% endblock %}

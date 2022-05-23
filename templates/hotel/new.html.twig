@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block titlepage %}New Hotel{% endblock %}
+
+{% block content %}
+        <div class="card-header header-elements-inline" style="background-color: #007682b5;">
+						<h3 class="card-title" style="color:white">Ajout nouveau Hotel</h3>
+      <a class="btn btn-dark" style="width:150px" href="{{ path('app_hotel_index') }}"> <i class="icon-reply"></i>Liste des Hotels</a>
+
+                           </div>
+                           <br />
+   	<div class="card">
+							
+							<div class="card-body">
+
+    {{ include('hotel/form.html.twig') }}
+
+    <a href="{{ path('app_hotel_index') }}">back to list</a>
+{% endblock %}

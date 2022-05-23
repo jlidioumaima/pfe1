@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block titlepage %}New User{% endblock %}
+
+{% block content %}
+   <div class="card-header header-elements-inline" style="background-color: #007682b5;">
+						<h3 class="card-title" style="color:white">Ajout nouveau Utilisateur</h3>
+      <a class="btn btn-dark" style="width:150px" href="{{ path('app_user_index') }}"> <i class="icon-reply"></i>Liste Utilisateurs</a>
+
+                           </div>
+                           <br />
+   	<div class="card">
+							
+							<div class="card-body">
+
+    {{ include('user/_form.html.twig') }}
+{% endblock %}

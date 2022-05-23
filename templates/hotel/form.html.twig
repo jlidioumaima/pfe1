@@ -1,0 +1,15 @@
+{{ form_start(form) }}
+    {{ form_widget(form) }}
+     {# Si la route est omra_edit on affiche les images #}
+	{% if app.request.attributes.get('_route') == 'app_hotel_edit' %}
+        <h2>Images</h2>
+        {% for image in hotel.images %}
+            <div>
+                <img src="{{ asset('/uploads/'~image.name) }}" alt="" width="150">
+
+              
+            </div>
+        {% endfor %}
+    {% endif %}
+       <button  class="btn btn-success" style="width:100px;margin-left: 90%;position: relative;"  > <i class="icon-floppy-disk"></i> {{ button_label|default('Valider') }}</button>
+{{ form_end(form) }}

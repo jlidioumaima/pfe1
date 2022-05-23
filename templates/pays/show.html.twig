@@ -1,0 +1,49 @@
+<a class="btn edit btn-info" type="button"  data-toggle="modal" data-target="#exampleModalCenter{{ pay.id }}" href="{{ path('app_pays_show', {'id': pay.id}) }}"style="width:40px"><i class="icon-eye2"></i></a>
+
+
+
+
+<div class="modal fade right" id="exampleModalCenter{{ pay.id }}"  role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+
+  <!-- Add class .modal-full-height and then add class .modal-right (or other classes from list above) to set a position to the modal -->
+  <div class="modal-dialog modal-dialog-centered" role="document">
+
+    <div class="modal-content">
+       
+      <div class="modal-body">
+                   <div class="modal-header">
+                    <h5 class="modal-title" id="myModalLabel"><i class="ti-marker-alt m-r-10" ></i> {{ pay.nom }} </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                   </div>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ pay.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ pay.nom }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ pay.description }}</td>
+            </tr>
+            <tr>
+             {% for image in pay.images %}
+                <td><center><img src="{{ asset('/uploads/'~image.name) }}" alt="" width="150"></center></td>
+                {% endfor %}
+                </tr>
+        </tbody>
+    </table>
+    </div>
+      
+    </div>
+  </div>
+</div>
+
+

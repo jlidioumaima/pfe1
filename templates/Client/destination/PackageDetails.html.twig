@@ -1,0 +1,276 @@
+ {% extends 'layout.html.twig' %}
+ {% block body %}
+<div id="content_wrapper">
+  <!--page title Start-->
+  <div class="page_title" data-stellar-background-ratio="0" data-stellar-vertical-offset="0" style="background-image:url(https://via.placeholder.com/1599x640);">
+      <ul>
+        <li><a href="javascript:;">Tour Destination</a></li>
+      </ul>
+    </div>
+    <!--page title end-->
+    <div class="clearfix"></div>
+	{% for voyage_organiser in voyageOrganiser %}
+	<div class="full_width destinaion_sorting_section">
+	  <div class="container">
+	   <div class="row space_100">
+	   
+	     <!-- left sidebar start -->
+
+	      <!-- left sidebar end -->
+	     <!-- right main start -->
+		 				
+		<div class="col-lg-9 col-md-9 col-sm-12">
+		<div class="tour_packages_right_section left_space_40">
+		
+		<div class="tour_packages_details_top">
+		
+		<div class="top_head_bar">
+		   <h4>{{ voyage_organiser.titre }}</h4>
+		   </div>
+		   <div class="bottom_desc">
+		   <h5 class="starting_text">Starting from<span>$1000 /</span>per person</h5>
+		    <span class="time_date"><i class="fa fa-clock-o"></i>4days</span>
+		   <h5 class="includes_text">includes:</h5>
+		    <!-- desc icons Start-->
+			<div class="row">
+			<div class ="col-lg-6 top_icons_part">
+			
+		   <ul class="sort_place_icons">
+		 
+		   <li><i class="fa fa-plane"></i> flights</li>
+		   
+		   <li><i class="fa fa-building-o"></i> hotels</li>
+		   </ul>
+		    <!-- desc icons End-->
+			</div>
+			
+			<div class="col-lg-6">
+			
+			<div class="top_links">
+			<ul>
+			<li>
+			<select class="selectpicker" data-live-search="true" title="view all includes">
+                    <option data-tokens="view all includes">view all includes</option>
+                    <option data-tokens="transports">transports</option>
+                    <option data-tokens="flights">flights</option>
+                    <option data-tokens="sight seeing">sight seeing</option>
+                    <option data-tokens="food">food</option>
+                    <option data-tokens="hotels">hotels</option>
+                  </select>
+				  </li>
+				  <li>
+				  <select class="selectpicker" data-live-search="true" title="view all excludes">
+                    <option data-tokens="view all includes">view all includes</option>
+                    <option data-tokens="transports">transports</option>
+                    <option data-tokens="flights">flights</option>
+                    <option data-tokens="sight seeing">sight seeing</option>
+                    <option data-tokens="food">food</option>
+                    <option data-tokens="hotels">hotels</option>
+                  </select>
+				  </li>
+				  </ul>
+			</div>
+			</div>
+		
+		   </div>
+		   		
+		</div>
+		</div>
+		     <!-- slider start -->
+		   <div class="package_details_slider">
+		
+			<div id="package_details_slider" class="owl-carousel owl-theme">
+   {% for image in voyage_organiser.images %} 
+			  <div class="item">
+													 <img src="{{ asset('/uploads/'~image.name) }}" alt="slide" width="881" height="425"> 
+
+													 </div>  
+			 {% endfor %}
+			</div>
+			 
+		   </div>
+		
+		     <!-- slider end -->
+			 
+			 <!-- Booking area Start-->
+          <div class="booking_area_section">
+<p>{{ voyage_organiser.description }}</p>			 
+			 <div class=" full_width booking_form_bg">
+			 <div class="main_content_form">
+			 <!-- tab_search form start -->
+			 <form>
+				<div class="pullleft check_in_field">
+				<label>available on</label>
+				<input type="text" id="Check_out_date_tab" placeholder="dd/mm/yyyy">
+					<i class="fa fa-calendar"></i>
+				</div>
+				
+				<div class="pullleft room_select_field">
+					<label>adults</label>
+					<select class="form-control selectpicker" data-live-search="true" id="search_adults">
+						<option value="1">01</option>
+						<option value="2">02</option>
+						<option value="3">03</option>
+						<option value="4">04</option>
+					</select>
+					<i class="fa fa-caret-down"></i>
+				</div>
+				<div class="pullleft room_select_field">
+					<label>kids</label>
+					<select class="form-control selectpicker" data-live-search="true" id="search_kids">
+						<option value="1">01</option>
+						<option value="2">02</option>
+						<option value="3">03</option>
+						<option value="4">04</option>
+					</select>
+					<i class="fa fa-caret-down"></i> 
+				</div>
+				<div class="pullleft submit_field">
+				<label>total:<span class="total_doller">$1000</span></label>
+					<input type="submit" value="BOOK NOW" class="search_tabs">
+					<button class="btn tab_search" type="submit"><i class="fas fa-search"></i></button>
+				</div>
+
+																			<a href="{{ path('app_reserver',{'id':voyage_organiser.id}) }}" class="btn btn-outline-success">Reserver l'offre</a>
+
+				</form>
+				<!-- tab_search form End -->
+            </div>
+			 
+			 </div>
+
+          </div>
+		  <!-- Booking area End -->
+
+		 <!-- package tabs start -->
+		  <div class="full_width travelite_middle_tabs" id="travelite_middle_tabs">
+		    <div class="pcg_tabs_panel">
+				<ul>
+					<li> <a href="#tab_search_1">More Infomation</a></li>
+					<li> <a href="#tab_search_2" class="">Show Map</a></li>
+					<li> <a href="#tab_search_3" class="">Review</a></li>
+					<li> <a href="#tab_search_4" class="">comments</a></li>
+				</ul>
+            </div>
+		                <!--  tab content start -->
+			<div id="tab_search_1" class="tab_details_part">
+			
+			<p>There are many variations of passages of Lorem Ipsum available, but the joy have suffered alteration in some format, by injected humour.  There are many variations of passages of Lorem Ipsum available, but the joy have suffered alteration in some format, by injected humour.  There are many variations of passages of Lorem Ipsum available, but the joy have suffered alteration in some format, by injected humour.  There are many variations of passages of Lorem Ipsum.
+            </p>
+			 
+			 <div class="inner_content">
+			 <div class="day_title">Day 1</div>
+			 <p>There are many variations of passages of Lorem Ipsum available, but the joy have suffered alteration in some format, by injected humour.  There are many variations of passages of Lorem Ipsum available, but the joy have suffered alteration in some format, by injected humour. 
+             </p>
+			 </div>
+			 
+			 <div class="inner_content">
+			 <div class="day_title">Day 2</div>
+			 <p>There are many variations of passages of Lorem Ipsum available, but the joy have suffered alteration in some format, by injected humour.  There are many variations of passages of Lorem Ipsum available, but the joy have suffered alteration in some format, by injected humour. 
+             </p>
+			 </div>
+			
+			</div>
+			 <!--  tab content End -->
+			 
+			      <!--  tab content start -->
+			<div id="tab_search_2" class="tab_details_part">
+			
+			<p>There are many variations of passages of Lorem Ipsum available, but the joy have suffered alteration in some format, by injected humour.  There are many variations of passages of Lorem Ipsum available, but the joy have suffered alteration in some format, by injected humour.  There are many variations of passages of Lorem Ipsum available, but the joy have suffered alteration in some format, by injected humour.  There are many variations of passages of Lorem Ipsum.
+            </p>
+			 
+			 <div class="inner_content">
+			 <div class="day_title">Day 1</div>
+			 <p>There are many variations of passages of Lorem Ipsum available, but the joy have suffered alteration in some format, by injected humour.  There are many variations of passages of Lorem Ipsum available, but the joy have suffered alteration in some format, by injected humour. 
+             </p>
+			 </div>
+			 
+			 <div class="inner_content">
+			 <div class="day_title">Day 2</div>
+			 <p>There are many variations of passages of Lorem Ipsum available, but the joy have suffered alteration in some format, by injected humour.  There are many variations of passages of Lorem Ipsum available, but the joy have suffered alteration in some format, by injected humour. 
+             </p>
+			 </div>
+			
+			</div>
+			 <!--  tab content End -->
+			  <!--  tab content start -->
+			<div id="tab_search_3" class="tab_details_part">
+			
+			<p>There are many variations of passages of Lorem Ipsum available, but the joy have suffered alteration in some format, by injected humour.  There are many variations of passages of Lorem Ipsum available, but the joy have suffered alteration in some format, by injected humour.  There are many variations of passages of Lorem Ipsum available, but the joy have suffered alteration in some format, by injected humour.  There are many variations of passages of Lorem Ipsum.
+            </p>
+			 
+			 <div class="inner_content">
+			 <div class="day_title">Day 1</div>
+			 <p>There are many variations of passages of Lorem Ipsum available, but the joy have suffered alteration in some format, by injected humour.  There are many variations of passages of Lorem Ipsum available, but the joy have suffered alteration in some format, by injected humour. 
+             </p>
+			 </div>
+			 
+			 <div class="inner_content">
+			 <div class="day_title">Day 2</div>
+			 <p>There are many variations of passages of Lorem Ipsum available, but the joy have suffered alteration in some format, by injected humour.  There are many variations of passages of Lorem Ipsum available, but the joy have suffered alteration in some format, by injected humour. 
+             </p>
+			 </div>
+			
+			</div>
+			 <!--  tab content End -->
+			  <!--  tab content start -->
+			<div id="tab_search_4" class="tab_details_part">
+			
+			<p>There are many variations of passages of Lorem Ipsum available, but the joy have suffered alteration in some format, by injected humour.  There are many variations of passages of Lorem Ipsum available, but the joy have suffered alteration in some format, by injected humour.  There are many variations of passages of Lorem Ipsum available, but the joy have suffered alteration in some format, by injected humour.  There are many variations of passages of Lorem Ipsum.
+            </p>
+			 
+			 <div class="inner_content">
+			 <div class="day_title">Day 1</div>
+			 <p>There are many variations of passages of Lorem Ipsum available, but the joy have suffered alteration in some format, by injected humour.  There are many variations of passages of Lorem Ipsum available, but the joy have suffered alteration in some format, by injected humour. 
+             </p>
+			 </div>
+			 
+			 <div class="inner_content">
+			 <div class="day_title">Day 2</div>
+			 <p>There are many variations of passages of Lorem Ipsum available, but the joy have suffered alteration in some format, by injected humour.  There are many variations of passages of Lorem Ipsum available, but the joy have suffered alteration in some format, by injected humour. 
+             </p>
+			 </div>
+			
+			</div>
+			 <!--  tab content End -->
+		
+	  </div>
+	  	 <!-- package tabs End -->
+		
+         <!-- highlight section start -->
+		 <div class="full_width package_highlight_section">
+		   <h4>highlights</h4>
+		   <div class="row">
+		     <div class="col-lg-5 col-md-5 col-sm-12">
+			 <div class="cost_include_exclude">
+			 <h5>Les Includes</h5>
+			 <ul>
+			 <li>{{voyage_organiser.inclus}}</li>
+			 </ul>
+			 </div>
+			 </div>
+			 
+			 <div class="col-lg-5 col-md-5 col-sm-12 col-lg-offset-1 col-md-offset-1">
+			 <div class="cost_include_exclude cost_excludes">
+			 <h5>Les non inclus:</h5>
+			 <ul>
+			 <li>{{voyage_organiser.NonInclus}}</li>
+			 </ul>
+			 </div>
+			 </div>
+			 
+		   </div>
+		   
+		  
+		 </div>
+		 
+         <!-- highlight section end -->
+	
+		
+	   </div><!-- right main start -->	  
+	</div> <!-- col-lg-9-end -->
+	</div><!--  row main -->
+  </div> <!-- container -->
+  </div> <!-- main wrapper -->
+  	{% endfor %}
+    {% endblock %}

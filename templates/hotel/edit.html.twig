@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block titlepage %}Edit User{% endblock %}
+
+{% block content %}
+  <div class="content">
+
+   <div class="card-header header-elements-inline" style="background-color: #007682b5;">
+						<h3 class="card-title" style="color:white" >Modifier l'hotel : {{hotel.nom}}</h3>
+						<div class="header-elements">
+							 <a class="btn btn-info" style="width:50px" href="{{ path('app_hotel_index') }}"><i class="icon-reply"></i> </a>
+	                	</div>
+					</div>
+					<br />
+   	<div class="card">
+							
+							<div class="card-body">
+							<div></div>
+						
+
+   
+ <br>
+
+   {{ include('hotel/_form.html.twig', {'button_label': 'Update'}) }}
+
+
+ </div>
+ 
+ </div>
+       						    <button  class="btn btn-success" style="width:100px;margin-left: 90%;position: relative;"  > <i class="icon-floppy-disk"></i> {{ button_label|default('Valider') }}</button>
+
+ </div>
+
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block titlepage %}New CroisiereExcursion{% endblock %}
+
+{% block content %}
+    <h1>Create new CroisiereExcursion</h1>
+
+    {{ include('croisiere_excursion/_form.html.twig') }}
+
+    <a href="{{ path('app_croisiere_excursion_index') }}">back to list</a>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+
+{% block titlepage %}New User{% endblock %}
+{% block script %}
+<script src="{{ asset('admin/global_assets/js/plugins/tables/datatables/datatables.min.js') }}"></script>
+	<script src="{{ asset('admin/global_assets/js/plugins/forms/selects/select2.min.js') }}"></script>
+    <script src="{{ asset('admin/assets/js/app.js') }}"></script>
+	<script src="{{ asset('admin/global_assets/js/demo_pages/datatables_basic.js') }}"></script>
+{% endblock %}
+{% block content %}
+   <div class="card-header header-elements-inline" style="background-color: #007682b5;">
+						<h3 class="card-title" style="color:white">Ajout nouveau Responsable</h3>
+      <a class="btn btn-dark" style="width:190px" href="{{ path('app_responsable_index') }}"> <i class="icon-reply"></i>Liste des responsables</a>
+
+                           </div>
+                           <br />
+   	<div class="card">
+							
+							<div class="card-body">
+
+    {{ include('responsable/_form.html.twig') }}
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block titlepage %}Modifier Omra{% endblock %}
+
+{% block content %}
+
+<div class="content">
+
+   <div class="card-header header-elements-inline" style="background-color: #007682b5;">
+						<h3 class="card-title" style="color:white">Modifier Omra</h3>
+						<div class="header-elements">
+							 <a class="btn btn-dark" style="width:150px" href="{{ path('app_omra_index') }}"> <i class="icon-reply"></i>Liste des Omras</a>
+
+	                	</div>
+					</div>
+					<br />
+   	<div class="card">
+							
+							<div class="card-body">
+							<div></div>
+						
+
+   
+ <br>
+    {{ include('omra/_form.html.twig', {'button_label': 'Modifier'}) }}
+  </div>
+ 
+ 
+   
+{% endblock %}

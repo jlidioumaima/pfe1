@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block titlepage %}New Pays{% endblock %}
+
+{% block content %}
+    <div class="card-header header-elements-inline" style="background-color: #007682b5;">
+						<h3 class="card-title" style="color:white">Ajout nouveau Pays</h3>
+      <a class="btn btn-dark" style="width:150px" href="{{ path('app_pays_index') }}"> <i class="icon-reply"></i>Liste des Pays</a>
+
+                           </div>
+                           <br />
+   	<div class="card">
+							
+							<div class="card-body">
+
+    {{ include('pays/_form.html.twig') }}
+
+
+{% endblock %}

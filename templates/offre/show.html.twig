@@ -1,0 +1,60 @@
+<a class="btn edit btn-warning" type="button"  data-toggle="modal" data-target="#exampleModalCenter{{ offre.id }}" href="{{ path('app_offres_show', {'id': offre.id}) }}"style="width:40px"><i class="icon-eye2"></i></a>
+
+
+
+
+<div class="modal fade right" id="exampleModalCenter{{ offre.id }}"  role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+
+  <!-- Add class .modal-full-height and then add class .modal-right (or other classes from list above) to set a position to the modal -->
+  <div class="modal-dialog modal-dialog-centered" role="document">
+
+    <div class="modal-content">
+       
+      <div class="modal-body">
+                   <div class="modal-header">
+                    <h5 class="modal-title" id="myModalLabel"><i class="ti-marker-alt m-r-10" ></i> {{ offre.description }}</h5> 
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                   </div>
+                   
+     
+              <table class="table">
+        <tbody
+            <tr>
+                <th>Id</th>
+                <td>{{ offre.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ offre.titre }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ offre.description }}</td>
+            </tr>
+            <tr>
+                <th>TotalRate</th>
+                <td>{{ offre.totalRate }}</td>
+            </tr>
+            <tr>
+                <th>Prix</th>
+                <td>{{ offre.prix }}</td>
+            </tr>
+            <tr>
+                <th>Inclus</th>
+                <td>{{ offre.inclus }}</td>
+            </tr>
+            <tr>
+                <th>Non_Inclus</th>
+                <td>{{ offre.NonInclus }}</td>
+            </tr>
+        </tbody>
+    </table>
+      
+      </div>
+     
+    </div>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+
+{% block titlepage %}Nouveau Randonnée {% endblock %}
+
+{% block content %}
+   <div class="card-header header-elements-inline" style="background-color: #007682b5;">
+						<h3 class="card-title" style="color:white">Ajout nouveau Randonnée</h3>
+      <a class="btn btn-dark" style="width:170px" href="{{ path('app_rondonnee_index') }}"> <i class="icon-reply"></i>Liste des Randonnées</a>
+
+                           </div>
+                            <br />
+   	<div class="card">
+							
+							<div class="card-body">
+
+
+    {{ include('rondonnee_admin/_form.html.twig') }}
+
+
+   <script src="{{ asset('global_assets/js/plugins/forms/selects/select2.min.js') }}"></script>
+	<script src="{{ asset('global_assets/js/plugins/forms/styling/uniform.min.js') }}"></script>
+
+
+	<script src="{{ asset('global_assets/js/demo_pages/form_layouts.js') }}"></script>
+	<!-- /theme JS files -->
+{% endblock %}

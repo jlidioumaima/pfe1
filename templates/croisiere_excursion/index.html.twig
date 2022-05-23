@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block titlepage %}CroisiereExcursion index{% endblock %}
+
+{% block content %}
+    <h1>CroisiereExcursion index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Type</th>
+                <th>Prix</th>
+           
+                <th colspan="3"><center>actions</center></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for croisiere_excursion in croisiere_excursions %}
+            <tr>
+                <td>{{ croisiere_excursion.id }}</td>
+                <td>{{ croisiere_excursion.type }}</td>
+                <td>{{ croisiere_excursion.prix }}</td>
+                <td>
+                    <a href="{{ path('app_croisiere_excursion_show', {'id': croisiere_excursion.id}) }}">show</a>
+                    <a href="{{ path('app_croisiere_excursion_edit', {'id': croisiere_excursion.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_croisiere_excursion_new') }}">Create new</a>
+{% endblock %}

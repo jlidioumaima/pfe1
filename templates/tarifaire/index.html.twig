@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %}
+{% block style %}{% endblock %}
+{% block titlepage %}GrilleTarifaire index{% endblock %}
+
+{% block script %}
+	<script src="{{ asset('admin/global_assets/js/plugins/tables/datatables/datatables.min.js') }}"> </script>
+	<script src="{{ asset('admin/global_assets/js/demo_pages/datatables_basic.js') }}"> </script>   
+{% endblock %}
+
+{% block content %}
+
+   <div class="content">
+  
+              
+           
+   <div class="card-header header-elements-inline" style="background-color: #007682b5;" style="padding-bottom:100px">
+  
+						<h3 class="card-title" style="color:white"> Liste des GrilleTarifaires </h3>
+                        <div class="header-elements"  >
+							 <a class="btn btn-dark" style="width:170px" href="{{ path('app_tarifaire_new') }}"><i class="icon-user-plus"></i> Ajouter GrilleTarifaire</a>
+	                	</div>
+                           </div>
+                           
+                           <div class="card">
+						
+							<div class="card-body">
+    <table class="table datatable-basic dataTable no-footer" id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Hotel</th>
+                <th>Date Debut</th>
+                <th>Date Fin</th>
+                <th>Type Chambre</th>
+                <th colspan="3"><center>actions</center></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for grille_tarifaire in grille_tarifaires %}
+            <tr>
+                <td>{{ grille_tarifaire.id }}</td>
+                {% for g in grille_tarifaire.hotel|slice(0,1)%}
+                <td>{{g.nom}}</td>
+                 {% endfor %}
+                 
+                <td>{{ grille_tarifaire.dateDebut ? grille_tarifaire.dateDebut|date('Y/m/d') : '' }}</td>
+                <td>{{ grille_tarifaire.dateFin ? grille_tarifaire.dateFin|date('Y/m/d') : '' }}</td>
+               
+               <td colspan="3">
+                <center>
+                   <a class="btn edit btn-info"  href="{{ path('app_tarifaire_show', {'id': grille_tarifaire.id}) }}"style="width:40px"><i class="icon-eye2"></i></a>
+                     <a class="btn edit btn-warning"  href="{{ path('app_tarifaire_edit', {'id': grille_tarifaire.id}) }}"style="width:40px"><i class="icon-pencil"></i></a>
+                    {{ include('tarifaire/_delete_form.html.twig') }}
+                   </center>
+            </td>
+            </tr>
+               
+        {% else %}
+        
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+             
+       {% endfor %} 
+        </tbody>
+         
+    </table>
+  
+    
+{% endblock %}
+
+
+
+
+

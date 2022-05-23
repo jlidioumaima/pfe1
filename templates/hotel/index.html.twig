@@ -1,0 +1,69 @@
+{% extends 'base.html.twig' %}
+
+{% block script %}
+	<script src="{{ asset('admin/global_assets/js/plugins/tables/datatables/datatables.min.js') }}"> </script>
+	<script src="{{ asset('admin/global_assets/js/demo_pages/datatables_basic.js') }}"> </script>   
+{% endblock %}
+
+{% block content %}
+
+   <div class="content">
+  
+              
+           
+   <div class="card-header header-elements-inline" style="background-color: #007682b5;" style="padding-bottom:100px">
+  
+						<h3 class="card-title" style="color:white">Liste des Hotels</h3>
+                        <div class="header-elements"  >
+							 <a class="btn btn-dark" style="width:150px" href="{{ path('app_hotel_new') }}"><i class="icon-user-plus"></i> Ajouter un Hotel</a>
+	                	</div>
+
+                           </div><br>
+                           
+                           <div class="card">
+						
+							<div class="card-body">
+    <table class="table datatable-basic dataTable no-footer" id="DataTables_Table_0"  ="grid" aria-describedby="DataTables_Table_0_info">
+        <thead>
+            <tr>
+            
+                <th>Nom</th>
+     
+                <th>etoiles</th>
+               <th>Telephone</th>
+               <th>Pays</th>
+                 <th colspan="2"> <center> Images</center></th>
+                <th colspan="5">actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for hotel in hotels %}
+            <tr>
+            
+                <td>{{ hotel.nom }}</td>
+              
+                <td>{{ hotel.etoiles }} etoiles</td>
+                 <td>{{ hotel.telephone }}</td>
+               
+                <td>{{ hotel.pays.nom }}</td>
+                 <td colspan="2"><center>
+                {% for image in hotel.images|slice(0,1) %}
+                <img src="{{ asset('/uploads/'~image.name) }}" alt="" width="150">
+                                {% endfor %}
+                                <center></td>
+              <td colspan="5">
+                  {{ include('hotel/show.html.twig') }}
+                   
+                     <a class="btn edit btn-warning"  href="{{ path('app_hotel_edit', {'id': hotel.id}) }}"style="width:40px"><i class="icon-pencil"></i></a>
+                {{ include('hotel/_delete_form.html.twig') }}
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
