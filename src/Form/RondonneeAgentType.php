@@ -7,13 +7,15 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 
 class RondonneeAgentType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('description')
+        ->add('description', CKEditorType::class)
+
             ->add('inclus')
             ->add('Non_Inclus')
            

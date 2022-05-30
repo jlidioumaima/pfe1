@@ -10,6 +10,8 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
+
 
 class RondonneeType extends AbstractType
 {
@@ -40,7 +42,8 @@ class RondonneeType extends AbstractType
                 'attr' => ['class' => 'tinymce'],
             ])
         
-            ->add('description')
+            ->add('description', CKEditorType::class)
+
        
             ->add('images', FileType::class,[
                 'label' => false,

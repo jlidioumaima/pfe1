@@ -61,7 +61,18 @@ class GrilleTarifaireRepository extends ServiceEntityRepository
         ;
     }
     */
-
+    public function findByGrille($value)
+    {
+        return $this->createQueryBuilder('v')
+            ->join('v.offre' ,'o')
+            ->andWhere('o.id = :val')
+            ->setParameter('val', $value)
+            ->orderBy('v.id', 'ASC')
+            ->setMaxResults(10)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
     /*
     public function findOneBySomeField($value): ?GrilleTarifaire
     {

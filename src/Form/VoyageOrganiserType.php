@@ -9,6 +9,8 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
+
 class VoyageOrganiserType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
@@ -39,7 +41,8 @@ class VoyageOrganiserType extends AbstractType
             'attr' => ['class' => 'tinymce'],
         ])
     
-        ->add('description')
+        ->add('description', CKEditorType::class)
+
 
         ->add('images', FileType::class,[
             'label' => false,

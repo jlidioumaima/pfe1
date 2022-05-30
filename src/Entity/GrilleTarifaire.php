@@ -61,6 +61,11 @@ class GrilleTarifaire
      */
     private $hotel;
 
+    /**
+     * @ORM\Column(type="float"  ,nullable=true)
+     */
+    private $prix_enfant;
+
     public function __construct()
     {
         $this->reservations = new ArrayCollection();
@@ -207,6 +212,18 @@ class GrilleTarifaire
     public function removeHotel(Hotel $hotel): self
     {
         $this->hotel->removeElement($hotel);
+
+        return $this;
+    }
+
+    public function getPrixEnfant(): ?float
+    {
+        return $this->prix_enfant;
+    }
+
+    public function setPrixEnfant(float $prix_enfant): self
+    {
+        $this->prix_enfant = $prix_enfant;
 
         return $this;
     }

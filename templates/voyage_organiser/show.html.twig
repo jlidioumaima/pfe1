@@ -161,8 +161,11 @@
                             <label class="col-lg-2 col-form-label font-weight-semibold">Description</label>
 							  {{ form_widget(formgrille.description, {'attr': {'required' :'required','class': 'form-control col-lg-4','placeholder':'description'}}) }}</div>
                         <div class="form-group row">
-                            <label class="col-lg-2 col-form-label font-weight-semibold">Prix</label>
+                            <label class="col-lg-2 col-form-label font-weight-semibold">Prix Adulte</label>
 							  {{ form_widget(formgrille.prix, {'attr': {'required' :'required','class': 'form-control col-lg-4','placeholder':'prix'}}) }}</div>
+                       <div class="form-group row">
+                            <label class="col-lg-2 col-form-label font-weight-semibold">Prix enfant</label>
+							  {{ form_widget(formgrille.PrixEnfant, {'attr': {'required' :'required','class': 'form-control col-lg-4','placeholder':'prix'}}) }}</div>
                         <div class="form-group row">
                              <label class="col-lg-2 col-form-label font-weight-semibold">Hotel</label>
 							  {{ form_widget(formgrille.hotel, {'attr': {'required' :'required','class': 'form-control col-lg-4','placeholder':'hotelgrille'}}) }}</div>  

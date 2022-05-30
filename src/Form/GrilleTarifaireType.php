@@ -20,7 +20,7 @@ class GrilleTarifaireType extends AbstractType
         
             ->add('hotel')
           
-           
+            ->add('PrixEnfant')  
             ->add('prix')
             ->add('description',TextareaType::class, [
                 'attr' => ['class' => 'tinymce'],

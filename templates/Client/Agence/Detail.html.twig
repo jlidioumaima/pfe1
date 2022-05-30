@@ -1,0 +1,160 @@
+{% extends 'layout.html.twig' %}
+{% block body %}
+	<div id="content_wrapper">
+		<!--page title Start-->
+			<div class="page_title" data-stellar-background-ratio="0" data-stellar-vertical-offset="0" style="background-image:url(https://via.placeholder.com/1599x640);">
+      <ul>
+        <li><a href="">Agences de Voyages</a></li>
+       
+      </ul>
+    </div>
+		
+		<!--page title end-->
+		<div class="clearfix"></div>
+
+		<div class="full_width destinaion_sorting_section">
+			<div class="container">
+				<div
+					class="row space_100">
+
+					<!-- left sidebar start -->
+					<div class="col-lg-3 col-md-3 col-sm-12">
+						<div class="travelite_left_sidebar">
+							<div class="sidebar_search_bar">
+								<form>
+									<input type="search" placeholder="Search" id="sidebar_search">
+								</form>
+
+							</div>
+							<aside class="widget destination_widget">
+							
+
+							</aside>
+
+							<aside class="widget widget_filter">
+							
+								
+							</aside>
+
+							<aside class="widget category_widget">
+								
+
+							
+
+							</aside>
+
+							<aside class="widget hotel_widgets">
+							
+
+							</aside>
+
+						</div>
+					</div>
+					<!-- left sidebar end -->
+					<!-- right main start -->
+					<div class="col-lg-9 col-md-9 col-sm-12">
+						<div class="tour_packages_right_section left_space_40">
+							<div class="tour_packages_description">
+								 
+							
+																																			
+
+							</div>
+							
+							<!--  sorting panel End -->
+
+
+							<!-- sorting places section -->
+
+							<div class="full_width sorting_places_section">
+						
+ {% for agence in agence %}
+									<div class="sorting_places_wrap  list_sorting_view">
+										<div class="row">
+											<div class="col-lg-5 col-md-5 col-sm-5 padding_none">
+												<div class="thumb_wrape"> {% for image in agence.images|slice(0,1) %} 
+													 <img src="{{ asset('/uploads/'~image.name) }}" alt="" width="349" height="264"> 
+
+													{% endfor %} 
+												</div>
+											</div>
+
+											<div class="col-lg-7 col-md-7 col-sm-7">
+												<div class="pd_left">
+													<div
+														class="top_head_bar">
+														 <h4><a href="#">{{ agence.nom }}</a></h4> 
+														<span class="time_date">
+															<i class="fa fa-clock-o"></i>
+														</span>
+													</div>
+													<div class="bottom_desc">
+														<h5>{{ agence.telephone }}<span> 
+
+																 <td></td> 
+
+
+																 
+															</span>
+														
+														</h5>
+														<!-- desc icons Start-->
+															<h5>{{ agence.email }}</h5>
+														<!-- desc icons End-->
+														
+													</div>
+													{{ agence.description }}
+												</div>
+	<ul class="sort_place_icons">
+																
+															<li>	<a href="{{ agence.facebook }}"><i class="fa fa-facebook"></i></a>
+																</li>
+
+															</ul>
+								
+											</div>
+										
+										</div>
+
+									</div>
+									<!--sort_list start end-->
+
+{% endfor %}
+							</div>
+
+								
+							<!-- sorting places section -->
+							<!-- pagination section -->
+								<div class="full_width pagination_bottom"> <ul class="pagination">
+									<li>
+										<a href="#">1</a>
+									</li>
+									<li>
+										<a href="#">2</a>
+									</li>
+									<li>
+										<a href="#">3</a>
+									</li>
+									<li>
+										<a href="#">4</a>
+									</li>
+									<li>
+										<a href="#">5</a>
+									</li>
+								</ul>
+							</div>
+							<!-- pagination section -->
+
+						</div>
+					</div>
+					<!-- right main start -->
+				</div>
+			</div>
+
+		</div>
+		<!--content body end-->
+	<!--footer start-->
+
+		<!--footer end-->
+	</div>
+{% endblock %}

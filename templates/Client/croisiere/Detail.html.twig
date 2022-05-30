@@ -6,8 +6,16 @@
 			
 		<div class="page_title" data-stellar-background-ratio="0" data-stellar-vertical-offset="0" style="background-image:url(https://via.placeholder.com/1599x640);">
 			<ul>
-				<li><a href="javascript:;">Tour Destination</a></li>
+				<li><a href="javascript:;"	{% for croisiere in croisiere|slice(0,1) %}
+							
+							
+									<h4> {% for croisiere in croisiere.pays|slice(0,1) %}
+                 
+                   {{ croisiere.nom}}</h4></a></li>
+				   {%endfor%}
+				   	   {%endfor%}
 			</ul>
+
 		</div>
 		<!--page title end-->
 		<div class="clearfix"></div>
@@ -151,93 +159,84 @@
 					<div class="col-lg-9 col-md-9 col-sm-12">
 						<div class="tour_packages_right_section left_space_40">
 							<div class="tour_packages_description">
-									{% for croisiere in croisiere %}
+									{% for croisiere in croisiere|slice(0,1) %}
 								<div class="tour_heading">
 							
-									<h4> {% for o in croisiere.pays %}
+									<h4> {% for croisiere in croisiere.pays|slice(0,1) %}
                  
-                   <td>{{ o.nom}}</td>
-                  {% endfor %}</h4>
-									<span class="packs">(178 Packs Found)</span>
-								</div>
-								<p class="more_text">There are many variations of passages of Lorem Ipsum available, but the joy have suffered alteration in 
-																																						some format, by injected humour.  There are many variations of passages of Lorem Ipsu available, 
-																																						but the joy have suffered alteration in some format,by injected humour users 
-																																						Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-
-							</div>
+                   <td>{{ croisiere.nom}}</td></h4>
+				   <p class="more_text">{{croisiere.description}}</p>
+                  {% endfor %}
+								
+					  {% endfor %}		
 							
 							<!--  sorting panel End -->
 
 
 							<!-- sorting places section -->
+							
+							<div class="row">
+								
+		 <div class="full_width sorting_places_section">
+									
 
-							<div class="full_width sorting_places_section">
-						
-
-									<div class="sorting_places_wrap  list_sorting_view">
-										<div class="row">
-											<div class="col-lg-5 col-md-5 col-sm-5 padding_none">
-												<div class="thumb_wrape"> {% for image in croisiere.images|slice(0, 1) %} 
+							<div class="row">
+							{% for croisiere in croisiere %}
+			<div class="col-lg-6 col-md-6 col-sm-6">
+				<div class="sorting_places_wrap grid_sorting">
+				<div class="top_head_bar">
+				<h4><a href="#">{{ croisiere.titre }}</a></h4>
+				
+				</div>
+				<div class="thumb_wrape">
+				{% for image in croisiere.images|slice(0, 1) %} 
 													 <img src="{{ asset('/uploads/'~image.name) }}" alt="" width="349" height="264"> 
 
 													{% endfor %} 
-												</div>
-											</div>
+				</div>
+				<div class="bottom_desc">
+			<h5 style="color:#18b499">{{croisiere.agence}}</h5>
+			
+				 <!-- desc icons Start-->
+		
+				 <!-- desc icons End-->
+				</div>
+					<div class="bottom_desc">
+					 
 
-											<div class="col-lg-7 col-md-7 col-sm-7">
-												<div class="pd_left">
-													<div
-														class="top_head_bar">
-														 <h4><a href="#">{{ croisiere.titre }}</a></h4> 
-														<span class="time_date">
-															<i class="fa fa-clock-o"></i>
-														</span>
-													</div>
-													<div class="bottom_desc">
-														<h5>Starting from<span> {% for croisiere in croisiere.pays %} 
-
-																 <td>{{ croisiere.nom}}</td> 
-
-
-																 {% endfor %} 
-															</span>
-														per person
-														</h5>
-														<!-- desc icons Start-->
-															<ul class="sort_place_icons"> <li>
-																<i class="fa fa-car"></i>
-																transports</li>
-															<li>
-																<i class="fa fa-plane"></i>
-																flights</li>
-															<li>
-																<i class="fa fa-binoculars"></i>
-																sight seeing</li>
-															<li>
-																<i class="fa fa-cutlery"></i>
-																food</li>
-															<li>
-																<i class="fa fa-building-o"></i>
-																hotels</li>
-														</ul>
-														<!-- desc icons End-->
-														<div>
-															<a href="{{ path('app_package_Details_croisiere',{'id':croisiere.id}) }}" class="list_view_details btns">view Details</a>
+		<p>A partir de 	<h5 style="padding-left: 300px; color:red">{% for grilletarifaire in croisiere.grilletarifaires|slice(0,1) %}{{grilletarifaire.prix}} TND{%endfor%}</h5>
+				 <!-- desc icons Start-->
+		
+				 <!-- desc icons End-->
+				</div>
+				
+				<div>
+												<center>		<a href="{{ path('app_package_Details_croisiere',{'id':croisiere.id}) }}" class="btn btn-primary" style="width:200px" style="height:5px"><i class="fa fa-plane-departure"> Reserver </i></a></center>
 														</div>
+				</div>
+
+				</div>
+						{% endfor %} 	
+					</div>
+								
+						</div>
+
+				<!--  place sort End -->
+				
+				<!--  place sort start -->
+				
+			
+			
+			
+	</div>
+			
+														
 													</div>
+												
 												</div>
 											</div>
 										</div>
 
-									</div>
-									<!--sort_list start end-->
-
-								{% endfor %}
-
-							</div>
-
-							
 							<!-- sorting places section -->
 							<!-- pagination section -->
 								<div class="full_width pagination_bottom"> <ul class="pagination">
@@ -257,7 +256,7 @@
 										<a href="#">5</a>
 									</li>
 								</ul>
-							</div>
+				</div>
 							<!-- pagination section -->
 
 						</div>

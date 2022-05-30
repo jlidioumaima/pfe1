@@ -4,7 +4,7 @@
 		<meta charset="utf-8"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-		<title>Discovery Travel</title>
+		<title>Dicovery Travel</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
         <meta name="description"  content="Travelite - Tours and Travels Online Booking HTML"/>
         <meta name="keywords" content="Travel, html template, Travelite template">
@@ -20,6 +20,7 @@
 <link rel="icon" type="image/ico"href="{{ asset('client/assets1/favicon.ico') }}" />
 		
 
+
 		
 
 	</head>
@@ -32,169 +33,34 @@
 <div id="travel_wrapper"> 
   <!--Header start-->
   <header id="header_wrapper">
-    <div class="header_top">
-      <div class="container">
-        <div class="row">	
-          <div class="col-md-6 col-sm-6">
-            <p><i class="fa fa-phone"></i> For Support? Call Us: <span>+1 758-673-2214</span></p>
-          </div>
-          <div class="col-md-6 col-sm-6">
-            <div class="top_menu">
-              <ul>
-                <li><a href=""><i class="fa fa-globe"></i> Languages</a>
-                  <ul class="sub-menu">
-                    <li><a href="">English</a></li>
-                    <li><a href="">France</a></li>
-                    <li><a href="">German</a></li>
-                  </ul>
-                </li>
-                <li><a href="">My Account</a></li>
-				  <li class="travelite_login_alert"><a href="{{ path('app_login') }}">Login</a></li>
-				  <li class="travelite_signup_alert"><a href="#">Signup</a></li>
-                <li><a href="">USD</a>
-                  <ul class="sub-menu">
-                    <li><a href="">INR</a></li>
-                    <li><a href="">USD</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+   
 	  <!-- popup form Start -->
-	  <div class="full_width login_wrapper">
-		  <div class="row">
-			  <div class="container">
-				  <div class="col-lg-5 col-md-5 col-sm-5 col-lg-offset-6 col-md-offset-6 col-sm-offset-6">
-					  <!-- login form start -->
-					  <div class="popup_alert_main travelite_login_form">
-						  <div class="login_heading">
-							  login
-							  <span class="close_btn"><i class="fa fa-times"></i></span>
-						  </div>
-						  <div class="popup_inner">
-							  <form>
-								  <input type="email" name="emaillogin" placeholder="Email Id"   class="input_login">
-								  <input type="password" name="passlogin" placeholder="Password" class="input_login">
-								  <input type="checkbox" id="login_check" name="checkbox" class="checkbox_login">
-								  <label for="login_check" class="remember_me">Remember me</label>
-								  <a href="#" class="forgot_link">Forget password?</a>
-							  </form>
-							  <div class="have_an_acnt">
-								  <p>Dont have an account?  <a href="#">Sign up</a></p>
-							  </div>
-							  <div class="or_line">
-								  <span>(OR)</span>
-							  </div>
-							  <div class="social_links_login">
-								  <ul>
-									  <li class="facebook_login"><a href="#"><i class="fa fa-facebook"></i>Login with facebook</a></li>
-									  <li class="gplus_login"><a href="#"><i class="fa fa-google-plus"></i>Login with Google+</a></li>
-								  </ul>
-							  </div>
-						  </div>
-					  </div>
-					  <!-- login form  End -->
-					  <!-- signup form start -->
-					  <div class="popup_alert_main travelite_signup_form">
-						  <div class="login_heading">
-							  signup
-							  <span class="close_btn"><i class="fa fa-times"></i></span>
-						  </div>
-						  <div class="popup_inner">
-							  <form class="signup_form">
-								  <input type="text" name="emaillogin" placeholder="First Name" class="input_login">
-								  <input type="text" name="emaillogin" placeholder="Last Name"  class="input_login">
-								  <input type="email" name="emaillogin" placeholder="Email Id"   class="input_login">
-								  <input type="password" name="passlogin" placeholder="Password" class="input_login">
-								  <input type="password" name="conf passlogin" placeholder="Confirm Password" class="input_login">
-								  <input type="checkbox" id="signup_check" name="checkbox" class="checkbox_login">
-								  <label for="signup_check" class="remember_me">I agree the Terms of Service, Privacy Policy, Guest 
-								  Refund Policy, and Host Guarantee Terms.</label>
-								  <input type="submit" value="SIGN UP" class="sub_signup">
-							  </form>
-							  <div class="or_line">
-								  <span>(OR)</span>
-							  </div>
-							  <div class="social_links_login">
-								  <ul>
-									  <li class="facebook_login"><a href="#"><i class="fa fa-facebook"></i>Login with facebook</a></li>
-									  <li class="gplus_login"><a href="#"><i class="fa fa-google-plus"></i>Login with Google+</a></li>
-								  </ul>
-							  </div>
-							  <div class="already_member"> already member? <a href="#">login here</a></div>
-						  </div>
-					  </div>
-					  <!-- signup form  End -->
-				  </div>
-			  </div>
-		  </div>
-	  </div>
+	
 	  <!-- popup form  End -->
     <div class="header_bottom">
       <div class="container">
         <div class="row">
           <div class="col-md-2 col-sm-2">
             <div class="travel_logo">
-				<a href="Home_01.html"><img src="{{ asset('client/assets11/svg/Logo.svg')}}" alt="logo" /></a> 
+				<a href="Home_01.html"><img src="{{ asset('client/assets/svg/Logo.svg')}}" alt="logo" /></a> 
 			</div>
           </div>
           <div class="col-md-10 col-sm-10"> <a href="javascript:;" class="menu-toggle"></a>
             <div class="main_menu">
               <ul>
-                <li class="active"><a href="{{ path('app_home') }}">home</a>
+                <li class="active"><a href="{{ path('app_home') }}">Acceuil</a></li>
 			
-				</li>
-                 <li><a href="{{ path('app_destination') }}">Voyage</a>
-							<ul class="sub-menu">
-							<li><a href={{ path('app_destination') }}>Destination</a>
-							  <ul class="sub-menu">
-								<li><a href="tour_australia.html">Australia</a></li>
-								<li><a href="tour_egypt.html">Egypt</a></li>
-								<li><a href="tour_singapore.html">Singapore</a></li>
-								<li><a href="tour_malaysia.html">Malaysia</a></li>
-								<li><a href="tour_india.html">India</a></li>
-								<li><a href="tour_nepal.html">Nepal</a></li>
-								<li><a href="tour_russia.html">Russia</a></li>
-							  </ul>
-							</li>
-							 <li><a href="Tour-Packages-Details.html">Tour Detail</a></li>
-							 <li><a href="Tour-Packages-Booking.html">Booking</a></li>
-							 <li><a href="Tour-Packages-Booking.html">Checkout</a></li>
-						
-							 <li><a href="Tour-Packages-List-View.html">tour-packages-list-view</a></li>
-						  </ul>
-                     </li>
-                <li><a href={{ path('croisiere') }}>Croisière</a>
-					 <ul class="sub-menu">
-						 <li><a href="Hotel-Home.html">Hotel-Home</a></li>
-						 <li><a href="Hotel-list-View.html">Hotel-list-View</a></li>
-						 <li><a href="Hotel-Details.html">Hotel-Details</a></li>      
-						 <li><a href="Hotel-Booking.html">Hotel-Booking</a></li>      
-				   </ul>
-			   <li><a href="{{ path('app_excursion_front') }}">Excursion</a></li>
-                <li><a href="{{ path('app_omra') }}">Omra</a></li>
-                <li><a href="{{ path('app_randonnee_front') }}">Randonnée</a></li>
-                <li><a href="">special offers</a></li>
-                <li><a href="Contact.html">contact</a></li>
-				 <li><a href="#">pages</a>
-				   <ul class="sub-menu">
-						 <li><a href="About.html">About</a></li>
-						 <li><a href="Services.html">services</a></li>
-						 <li><a href="Blog.html">blog</a></li>
-						 <li><a href="Blog_Detail.html">blog-Details</a></li>      
-						 <li><a href="Tour_Gallery_1_Columns.html">Tour-Gallery-1-Columns</a></li>      
-						 <li><a href="Tour_Gallery_2_Columns.html">Tour-Gallery-2-Columns</a></li>      
-						 <li><a href="Tour_Gallery_3_Columns.html">Tour-Gallery-3-Columns</a></li>      
-						 <li><a href="Offers.html">Offers</a></li>      
-						 <li><a href="Event.html">Event</a></li>      
-						 <li><a href="Coming_soon.html">Coming-soon</a></li>      
-						 <li><a href="404_Error.html">404-Error</a></li>      
-							 
-				   </ul>
-				</li>
+				
+                 <li><a href="{{ path('app_destination') }}">Voyages</a></li>
+							
+                <li><a href="{{ path('croisiere') }}">Croisières</a></li>
+					
+			   <li><a href="{{ path('app_excursion_front') }}">Excursions</a></li>
+                <li><a href="{{ path('app_omra_front') }}">Omra</a></li>
+                <li><a href="{{ path('app_randonnee_front') }}">Randonnées</a></li>
+                <li><a href="{{path('app_forum')}}">Forum</a></li>
+                <li><a href="{{ path('app_detail_agence') }}">Agences</a></li>
+				 
               </ul>
             </div>
           </div>
@@ -207,20 +73,21 @@
   {% block body %} {% endblock %}
   <!--content body end--> 
   <!--footer start-->
-  <footer id="footer_wrapper">
+ <footer id="footer_wrapper">
     <div class="container">
       <div class="row">
         <div class="col-md-4">
           <aside class="widget widget_text"> 
 			<a href="Home_01.html"><img src="{{ asset('client/assets1/svg/Logo.svg')}}" alt="footer logo" />
 			</a> 
-            <p>In 2015, We launched Travellers with the belief that other travellers would share our desire to experience authentic adventures in a responsible and sustainable manner. <br>
-              <br>
-              We've grown from a one-man show to a company of over 50 world wide, and from a handful of trips in all over the world.</p>
-            <a href="">Read More <i class="fa fa-angle-right"></i></a> </aside>
+<p>Les offres de voyages proposés par les agences de voyages
+tunisiennes affiliées dans notre plateforme, sont optimisées
+d’une manière simple pour permettre aux utilisateurs de
+planifier une aventure parfaite.  </p>            <br>
+              
           <aside class="widget widget_tag_cloud">
             <h4 class="widget-title">Tags</h4>
-            <div class="tagcloud"> <a href="">Travel</a> <a href="">Booking</a> <a href="">Hotels</a> <a href="">Cars</a> <a href="">Flights</a> <a href="">Tours</a> </div>
+            <div class="tagcloud"> <a href="{{ path('app_destination') }}">Voyages</a> <a href="{{ path('croisiere') }}">Croisière</a> <a href="">Agences</a> <a href="{{ path('app_randonnee_front') }}">Randonnées</a> <a href="{{ path('app_excursion_front') }}">Excursions</a> </div>
           </aside>
         </div>
         <div class="col-md-4">
@@ -239,19 +106,22 @@
 				  </li>
 				</ul>
 			  </aside>
-          <aside class="widget widget_links">
-            <h4 class="widget-title">Useful Links</h4>
+         
+        </div>
+		<div class="col-md-4">
+         <aside class="widget widget_links">
+            <h4 class="widget-title">Les liens</h4>
             <ul>
-              <li><a href="">Travellers</a></li>
-              <li><a href="">Support Center</a></li>
-              <li><a href="">My Account</a></li>
-              <li><a href="">Forum</a></li>
+              <li><a href="{{ path('app_destination') }}">Voyages Organisés</a></li>
+              <li><a href="{{ path('croisiere') }}">Croisière</a></li>
+              <li><a href="{{ path('app_excursion_front') }}">Excursions</a></li>
+              <li><a href="{{ path('app_randonnee_front') }}">Randonnée</a></li>
+			      <li><a href="{{ path('app_omra_front') }}">Omra</a></li>
               <li><a href="">Special Offers</a></li>
-              <li><a href="">Events Ready</a></li>
+              <li><a href="">Les Agences</a></li>
             </ul>
           </aside>
-        </div>
-        
+		   </div>
   </footer>
   <!--footer end-->
   <div class="copyright">

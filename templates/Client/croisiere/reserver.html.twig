@@ -23,7 +23,7 @@
                 <!-- tabs start -->
                 <div class="tour_booking_tabs">
                   <ul>
-                   <li><a href="#personal_info">Personal Info</a></li>
+                   
                     <li><a href="#booking_details">Booking Details</a></li>
                    
                   
@@ -36,8 +36,8 @@
                     <!--  tab inner section two Start -->
                     <div class="tab_inner_section flight_inner_section">
                       <div class="heading_tab_inner">
-                        <h5>flight Details</h5>
-                        <span>change flight</span> </div>
+                        <h5>Details Offre</h5>
+                     </div>
                       <div class="tab_inner_body full_width">
                         <div class="flight_review_area full_width">
                           <div class="col-lg-10 col-md-9"> 
@@ -73,12 +73,12 @@
                           <div class="right_includes_hotel col-lg-3 col-md-3">
                           <div class="check_in_out_wrap">
                             <div class="check_in">
-                              <label>Check in</label>
-                              <div class="check_in_box"> <span class="day">Mon</span> <span class="date">22</span> <span class="month">sep</span> </div>
+                              <label>Date de départ</label>
+                              <div class="check_in_box" ><span class="day"> {{grilletarifaire.datedebut|date('M')}} </span> <span class="date">{{grilletarifaire.datedebut|date('d')}} </span> </span></div>
                             </div>
                             <div class="check_in">
-                              <label>Check out</label>
-                              <div class="check_in_box"> <span class="day">Mon</span> <span class="date">22</span> <span class="month">sep</span> </div>
+                              <label>Date D'arrivée</label>
+                              <div class="check_in_box"><span class="day"> {{grilletarifaire.datefin|date('M')}} </span> <span class="date">{{grilletarifaire.datefin|date('d')}} </span> </span></div>
                             </div>
                           </div>
                         </div>
@@ -93,51 +93,61 @@
                         <div class="left_lists col-lg-6 col-md-6">
                           <table>
                             <tr>
-                              <td class="label_list">room type</td>
+                              <td class="label_list">type chambre</td>
                               <td>-</td>
-                              <td>Luxurious Two BedRoom</td>
+                              <td>Chambre Double</td>
                             </tr>
                             <tr>
-                              <td class="label_list">adults</td>
+                              <td class="label_list">Adults</td>
                               <td>-</td>
-                              <td>2</td>
+                              <td>{{adultes}} Adults</td>
+                            
                             </tr>
                             <tr>
-                              <td class="label_list">children</td>
-                              <td>-</td>
-                              <td>1</td>
+                              <td class="label_list">Enfants</td>
+                         <td>-</td>
+                              <td>{{enfants}}Enfants</td>
                             </tr>
                             <tr>
+                                 <center>
                               <td class="label_list">duration</td>
                               <td>-</td>
-                              <td>3 Nights/ 2 Days</td>
+                              <td class="bold"> {% set difference = date(grilletarifaire.datefin).diff(grilletarifaire.datedebut).format('%d') %}
+            {{ difference }} Jours</td>
+            </center>
                             </tr>
+                            
                           </table>
                         </div>
                         <div class="left_lists col-lg-6 col-md-6">
                           <div class="table_bold">
                             <table>
-                              <tr>
-                                <td class="label_list">Per Room Price</td>
+                            <tr>
+                            <td class="label_list">Prix par enfant </td>
+                              <td>-</td>
+                                  <td class="bold">{{grilletarifaire.PrixEnfant}}</td>
+                            </tr>
+                             <tr>
+                                  <td class="label_list">Prix par adulte </td>
                                 <td>-</td>
-                                <td class="bold">$210</td>
-                              </tr>
-                              <tr>
-                                <td class="label_list">Extra Persons (1) </td>
-                                <td>-</td>
-                                <td class="bold">$105</td>
-                              </tr>
-                              <tr>
-                                <td class="label_list">3 Nights Stay</td>
-                                <td>-</td>
-                                <td class="bold">$945</td>
-                              </tr>
-                              <tr>
-                                <td class="label_list">Taxe Fee</td>
-                                <td>-</td>
-                                <td class="bold">$15</td>
-                              </tr>
+                                <td class="bold">{{ grilletarifaire.prix}}</td>
+                            </tr>
+                             
+                             
+                                
                             </table>
+                          <table>
+                             <tr>
+                                <td class="label_list">Prix total adultes  </td>
+                                <td>-</td>
+                                <td class="bold">{{ (adultes*grilletarifaire.prix) }}</td>
+                              </tr>
+                              <tr>
+                                <td class="label_list">Prix total enfants </td>
+                                <td>-</td>
+                                <td class="bold">{{ (enfants*grilletarifaire.PrixEnfant) }}</td>
+                              </tr>
+                              </table>
                           </div>
                         </div>
                        </div>
@@ -154,8 +164,8 @@
                   
                   <!-- total row Start-->
                   <div class="full_width total_price_row">
-                    <p>Total Price - </p>
-                    <h2>$960</h2>
+                    <p>Total à payer </p>
+                    <h2>{{(enfants*grilletarifaire.PrixEnfant)+(adultes*grilletarifaire.prix)}} DT</h2>
                   </div
                   
                   <!-- proceed button -->
@@ -170,14 +180,15 @@
                   <!--  tab inner section three Start -->
                   <div class="inner_container">
     
-                      <div class="tab_inner_section inner_section_2 flight_inner_section">
+                      <div class="tab_inner_section inner_section_2 flight_inner_section" >
                       
                           <!-- package_booking_form start -->
                           
-                            {{ form_start(form) }}
+                            {{ form_start(form)  }}
     {{ form_widget(form) }}
+    <input name="periode" value="{{grilletarifaire.id}}" type="hidden">
     <br><br>
-    <button  class="btn btn-info" style="width:100px;margin-left: 90%;position: relative;"  > <i class="icon-floppy-disk"></i> {{ button_label|default('Valider') }}</button>
+    <button  class="btn btn-info"  style="width:100px;margin-left: 90%;position: relative;"  > <i class="icon-floppy-disk"></i> {{ button_label|default('Valider') }}</button>
 {{ form_end(form) }}
 
                           </div>
@@ -191,7 +202,6 @@
                       <!--  tab inner three section End --> 
                       <!-- proceed button -->
                       <div class="full_width t_align_c">
-                        <a href="#booking_details" type="submit" value="proceed to next step" class="btn_green proceed_buttton btns">proceed to next step</a>
                       </div>
                         <!--  tab_inner_body end -->
                         

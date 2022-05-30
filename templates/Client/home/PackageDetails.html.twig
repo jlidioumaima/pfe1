@@ -1,4 +1,4 @@
-{% extends 'layout.html.twig' %}
+ {% extends 'layout.html.twig' %}
  {% block body %}
 <div id="content_wrapper">
   <!--page title Start-->
@@ -98,41 +98,59 @@
 			 <div class=" full_width booking_form_bg">
 			 <div class="main_content_form">
 			 <!-- tab_search form start -->
-			 <form>
-				<div class="pullleft check_in_field">
-				<label>available on</label>
-				<input type="text" id="Check_out_date_tab" placeholder="dd/mm/yyyy">
-					<i class="fa fa-calendar"></i>
+			 <form method="POST">
+		
+			 <div class="pullleft check_in_field">
+				<label>Periode</label>
+				<select class="form-control " name="periode" >
+			
+				{% for grilletarifaire in offre.grilletarifaires %}
+				<option value="{{grilletarifaire.id}}"> Du {{grilletarifaire.datedebut|date('d/m/Y')}}  A {{grilletarifaire.datefin|date('d/m/Y')}}{%endfor%}</option>
+					
+			
+			
+				</select>
 				</div>
+					
 				
 				<div class="pullleft room_select_field">
-					<label>adults</label>
-					<select class="form-control selectpicker" data-live-search="true" id="search_adults">
+					<label>Adults</label>
+					<select class="form-control " name="adultes">
 						<option value="1">01</option>
 						<option value="2">02</option>
 						<option value="3">03</option>
 						<option value="4">04</option>
+						<option value="5">05</option>
+						<option value="6">06</option>
+						<option value="7">07</option>
+						<option value="8">08</option>
+						<option value="9">09</option>
+						<option value="10">10</option>
 					</select>
 					<i class="fa fa-caret-down"></i>
 				</div>
 				<div class="pullleft room_select_field">
-					<label>kids</label>
-					<select class="form-control selectpicker" data-live-search="true" id="search_kids">
+					<label>Enfants</label>
+					<select class="form-control " name="enfants" >
 						<option value="1">01</option>
 						<option value="2">02</option>
 						<option value="3">03</option>
 						<option value="4">04</option>
+						<option value="5">05</option>
+						<option value="6">06</option>
+						<option value="7">07</option>
+						<option value="8">08</option>
+						<option value="9">09</option>
+						<option value="10">10</option>
 					</select>
-					<i class="fa fa-caret-down"></i> 
+					<i class="fa fa-caret-down"></i>
 				</div>
-				<div class="pullleft submit_field">
-				<label>total:<span class="total_doller">$1000</span></label>
-					<input type="submit" value="BOOK NOW" class="search_tabs">
-					<button class="btn tab_search" type="submit"><i class="fas fa-search"></i></button>
-				</div>
+					<div class="pullleft submit_field">
+					<button value= "submit" class="btn btn-outline-info" >Verifier disponiblité</button>
+					</div>
+				
 
-																			<a href="{{ path('app_reserver_offre',{'id':offre.id}) }}" class="btn btn-outline-success">Reserver l'offre</a>
-
+		
 				</form>
 				<!-- tab_search form End -->
             </div>

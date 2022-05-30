@@ -8,6 +8,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 
 class OmraType extends AbstractType
 {
@@ -28,7 +29,8 @@ class OmraType extends AbstractType
                 'attr' => ['class' => 'tinymce'],
             ])
         
-            ->add('description')
+            ->add('description', CKEditorType::class)
+
             ->add('programme')
             ->add('images', FileType::class,[
                 'label' => false,

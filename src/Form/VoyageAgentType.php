@@ -8,14 +8,15 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
+
 class VoyageAgentType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('description',TextareaType::class, [
-                'attr' => ['class' => 'tinymce'],
-            ])
+        ->add('description', CKEditorType::class)
+
             ->add('categorie')
 
             ->add('inclus',TextareaType::class, [

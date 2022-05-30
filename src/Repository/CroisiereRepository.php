@@ -62,7 +62,7 @@ class CroisiereRepository extends ServiceEntityRepository
         ;
     }
    
-
+    
     /*
     public function findOneBySomeField($value): ?Croisiere
     {

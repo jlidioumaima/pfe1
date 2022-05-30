@@ -5,7 +5,7 @@ namespace App\Controller;
 use App\Entity\Croisiere;
 use App\Form\CroisiereAgentType;
 use App\Entity\Images;
-use App\Repository\OffresRepository;
+
 use App\Repository\CroisiereRepository;
 use App\Form\GrilleTarifaireType;
 use App\Entity\Agence;
@@ -15,6 +15,7 @@ use App\Form\CroisiereExcursionType;
 use App\Repository\CroisiereExcursionRepository;
 use App\Repository\ClientRepository;
 use App\Entity\Reservation;
+use App\Repository\OffresRepository;
 use App\Repository\AgenceRepository;
 use App\Repository\GrilleTarifaireRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
